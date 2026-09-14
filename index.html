@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Threats | Stay Alert. Stay Secure.</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#07111f;color:#eaf2ff;line-height:1.6}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7%;position:sticky;top:0;background:#07111ff2;backdrop-filter:blur(10px);z-index:5;border-bottom:1px solid #19304a}
+.logo{font-size:22px;font-weight:800}.logo span{color:#35d0ff}
+nav a{color:#c9d8e8;text-decoration:none;margin-left:22px;font-size:14px}
+.hero{padding:90px 7% 70px;background:radial-gradient(circle at 80% 20%,#123d58 0,transparent 35%),linear-gradient(135deg,#07111f,#0a1c31)}
+.badge{display:inline-block;padding:7px 12px;border:1px solid #24607c;border-radius:30px;color:#62ddff;font-size:12px;margin-bottom:18px}
+h1{font-size:clamp(40px,7vw,72px);line-height:1.05;max-width:800px}
+h1 span{color:#35d0ff}
+.hero p{max-width:700px;color:#b8c9db;margin:22px 0;font-size:18px}
+.btn{display:inline-block;background:#35d0ff;color:#03101b;padding:12px 19px;border-radius:8px;text-decoration:none;font-weight:700;margin-right:10px}
+.btn.alt{background:transparent;color:#eaf2ff;border:1px solid #35516b}
+section{padding:65px 7%}
+.section-title{text-align:center;margin-bottom:35px}.section-title h2{font-size:34px}.section-title p{color:#9db0c4}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#0d1c2d;border:1px solid #1b3850;border-radius:14px;padding:24px}
+.card .icon{font-size:30px;margin-bottom:12px}.card h3{margin-bottom:8px}.card p{color:#aebfd0;font-size:14px}
+.check{background:#091827;border-left:4px solid #35d0ff;padding:25px;border-radius:10px;margin-top:25px}
+ul{padding-left:20px;color:#b8c9db}li{margin:9px 0}
+.quiz{max-width:760px;margin:auto;background:#0d1c2d;border:1px solid #1b3850;border-radius:16px;padding:28px}
+.question{font-size:19px;margin-bottom:18px}.option{display:block;width:100%;text-align:left;background:#11263a;border:1px solid #28475f;color:#eaf2ff;padding:12px;margin:8px 0;border-radius:8px;cursor:pointer}.option:hover{border-color:#35d0ff}
+#result{margin-top:18px;font-weight:700}
+footer{text-align:center;padding:30px;color:#7890a8;border-top:1px solid #19304a;font-size:13px}
+.small{font-size:12px;color:#7f96aa;margin-top:12px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Cyber<span>Threats</span></div>
+  <div><a href="#threats">Threats</a><a href="#protect">Protect</a><a href="#quiz">Quiz</a></div>
+</nav>
+
+<header class="hero">
+  <span class="badge">CYBERSECURITY AWARENESS PROJECT</span>
+  <h1>Stay alert.<br><span>Stay secure.</span></h1>
+  <p>Cyber Threats is an awareness platform that helps users recognize common cyberattacks, understand warning signs, and build safer digital habits.</p>
+  <a class="btn" href="#threats">Explore Threats</a>
+  <a class="btn alt" href="#quiz">Take the Quiz</a>
+</header>
+
+<section id="threats">
+  <div class="section-title"><h2>Know the Threats</h2><p>Understanding the risk is the first step toward prevention.</p></div>
+  <div class="grid">
+    <div class="card"><div class="icon">🎣</div><h3>Phishing</h3><p>Fake messages or websites designed to trick users into revealing information or clicking unsafe links.</p></div>
+    <div class="card"><div class="icon">🦠</div><h3>Malware</h3><p>Harmful software that can disrupt devices, steal information, or gain unauthorized access.</p></div>
+    <div class="card"><div class="icon">🔐</div><h3>Weak Passwords</h3><p>Simple or reused passwords can make accounts easier for attackers to compromise.</p></div>
+    <div class="card"><div class="icon">🚨</div><h3>Unauthorized Access</h3><p>Attackers may attempt to enter accounts or systems without permission.</p></div>
+  </div>
+</section>
+
+<section id="protect">
+  <div class="section-title"><h2>Protect Yourself</h2><p>Simple habits can significantly reduce everyday cyber risk.</p></div>
+  <div class="check">
+    <ul>
+      <li>Use strong, unique passwords for important accounts.</li>
+      <li>Turn on multi-factor authentication whenever it is available.</li>
+      <li>Check links and senders carefully before clicking or replying.</li>
+      <li>Keep your operating system, apps, and security tools updated.</li>
+      <li>Never share passwords or sensitive information through suspicious messages.</li>
+      <li>Back up important files and report suspicious activity promptly.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="section-title"><h2>Quick Security Quiz</h2><p>Test your cyber-threat awareness.</p></div>
+  <div class="quiz">
+    <div class="question">You receive an unexpected message asking you to click a link and confirm your password. What should you do?</div>
+    <button class="option" onclick="answer(false)">A. Click it quickly before the account is locked.</button>
+    <button class="option" onclick="answer(true)">B. Don't click; verify the sender through an official channel.</button>
+    <button class="option" onclick="answer(false)">C. Reply with your password to confirm your identity.</button>
+    <div id="result"></div>
+    <div class="small">Educational demo — never enter real passwords or sensitive information here.</div>
+  </div>
+</section>
+
+<footer>© 2026 Cyber Threats • Cybersecurity Awareness & Education</footer>
+
+<script>
+function answer(correct){
+  const r=document.getElementById('result');
+  r.textContent=correct ? '✅ Correct! Treat unexpected password requests and links as suspicious.' : '⚠️ Not quite. Avoid unexpected links and verify requests through an official channel.';
+}
+</script>
+</body>
+</html>
